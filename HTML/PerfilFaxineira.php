@@ -45,7 +45,7 @@
     </form>
 
     <br><br><a href="ConsultarVaga.php"><button>Buscar Vagas</button></a>
-    <br><br><a href="EditarDomestica.php"><button>Editar Informações</button></a>
+    <br><br><a href="EditarInformacoes.php"><button>Editar Informações</button></a>
     <br><br><a href="DeletarDomestica.php"><button>Deletar Meu Perfil</button></a>
     
 </body>
