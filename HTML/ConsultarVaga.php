@@ -19,6 +19,7 @@
 </head>
 <body>
 
+    <form>
     
         <?php
 
@@ -27,14 +28,12 @@
             return $consul->consultarVagas($conexao);
 
         ?>
-    
 
-    
+    </form>
 
-
-
+        <br><br><a href="PerfilFaxineira.php"><button>Ver Meu Perfil</button></a>
 
 
-    
+        
 </body>
 </html>

@@ -58,11 +58,13 @@
 
         }//Fim if
 
-        echo "Impossível atualizar";
+        echo "Ops...Houve uma falha ao atualizar";
     ?>
     </form>
 
+    <br><br><a href="PerfilFaxineira.php"><button>Ver Meu Perfil</button></a>
     <br><br><a href="ConsultarVaga.php"><button>Buscar Vagas</button></a>
+    
     
     
 </body>
