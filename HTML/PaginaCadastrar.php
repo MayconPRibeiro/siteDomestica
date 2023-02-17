@@ -1,3 +1,12 @@
+<?php
+    namespace siteDomestica\HTML;
+    
+    require_once('../PHP/domestica/Conexao.php');
+
+    use siteDomestica\PHP\domestica\Conexao;
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -55,13 +64,40 @@
                     <input type="password" name="tSenha" id="tSenha">
                     
                     <div class="btnRadio">
-                        <input type="radio" name="tOpacao" id="tOpcao1" value="1">
+                        <input type="radio" name="tOpcao" id="tOpcao1" value="domestica">
                         <label for="tOpcao1">Sou prestador de Serviço</label><br>
-                        <input type="radio" name="tOpacao" id="tOpcao2" value="2">
+                        <input type="radio" name="tOpcao" id="tOpcao2" value="cliente">
                         <label for="tOpcao2">Sou contratante</label>
                     </div>
 
-                    <input type="submit" value="Cadastrar">
+                    <input type="submit" value="Cadastrar"> 
+                    
+                    <?php
+
+                        if($_POST['tOpcao'] == 'domestica'){
+
+                            $conexao = new Conexao();
+                            $conexao->conectar();
+                            
+                            $incluir = new Inserir();
+                            $incluir->insert($conexao)
+
+                        }else{
+                            $conexao = new Conexao();
+                            $conexao->conectar();
+
+                            $incluir = new Inserir();
+                            $incluir->insert($conexao, $_POST['tNome'], $_POST['tCPF'], $_POST['tDataNascimento'], $_POST['tCidade'], $_POST['Bairro'], $_POST['tNumero'], 0 , $_POST['tSenha'], $_POST['tEmail'], $_POST['tWhats'], 'Vazio', 'Vazio', 'Vazio', 'Vazio');
+
+                        }//Fim if else
+                        
+
+
+
+                    ?>
+
+
+
                 </form>
             </div>
         </div>
