@@ -19,8 +19,8 @@
     $conexao = new Conexao();
     $conexao->conectar();
 
-    $pessoa = new Inserir();
-    echo $pessoa->insert($conexao, '1235', 'Ana', '15/12/2005', 'Vegueiro', 'Centro', 'SBC', 52 , 1, 'abc123', 'anagatinha2001@orkut.com', '99999999');
+    //$pessoa = new Inserir();
+    //echo $pessoa->insert($conexao, '1235', 'Ana', '15/12/2005', 'Vegueiro', 'Centro', 'SBC', 52 , 1, 'abc123', 'anagatinha2001@orkut.com', '99999999');
 
     //$cons = new Consultar();
     //echo $cons->ConsultarIndividual($conexao, "domestica", "1235");
