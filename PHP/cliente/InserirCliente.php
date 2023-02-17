@@ -5,25 +5,25 @@
 
     use siteDomestica\PHP\domestica\Conexao;
 
-    class Inserir{
+    class InserirCliente{
         
         public function cadastrar(
-            Conexao $conexao,
-            string $nomeDaTabela, 
-            int $cpf,
-            string $nome,
+            Conexao $conexao, 
+            string $cpf, 
+            string $nome, 
+            string $Nascimento, 
             string $rua,
             string $cidade,
+            string $bairro,
             int $numero,
-            string $telefone,
-            string $dataDeNascimento,
+            int $avaliacao,
             string $senha,
-            string $email)
+            string $email,
+            string $telefone)
         {
             try{
                 $conn = $conexao->conectar();//Abrindo a conexão com o banco
-                $sql  = "insert into $nomeDaTabela(cpf, nome, dataDeNascimento, rua, cidade, numero, telefone, senha, email, avaliacao) 
-                values ('$cpf','$nome','$rua', '$cidade', '$numero', '$telefone ', '$dataDeNascimento', '$senha', '$email', '0')";//Escrevi o script
+                $sql  = "insert into cliente (cpf, nome, dataDeNascimento, rua, cidade, bairro , numero, avaliacao, senha, email, telefone) values ('$cpf','$nome','$Nascimento','$rua','$cidade','$bairro','$numero','$avaliacao','$senha','$email','$telefone')";//Escrevi o script
                 $result = mysqli_query($conn,$sql);//Executa a ação do script no banco
 
                 mysqli_close($conn);//fechando a conexão com sucesso!

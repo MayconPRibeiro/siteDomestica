@@ -2,9 +2,12 @@
     namespace siteDomestica\HTML;
     
     require_once('../PHP/domestica/Conexao.php');
+    require_once('../PHP/cliente/InserirCliente.php');
+    require_once('../PHP/domestica/Inserir.php');
 
     use siteDomestica\PHP\domestica\Conexao;
-
+    use siteDomestica\PHP\domestica\Inserir;
+    use siteDomestica\PHP\cliente\InserirCliente;
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +26,8 @@
                 <ul class="navLink">
                     <li><a href="#"><b>Como funciona?</b></a></li>
                     <li><a href="#"><b>Quem Somos?</b></a></li>
-                    <li><a href="PaginaCadastrar.html"><b>Cadastre-se</b></a></li>
-                    <li><a href="PaginaLogin.html"><b>Login</b></a></li>
+                    <li><a href="PaginaCadastrar.php"><b>Cadastre-se</b></a></li>
+                    <li><a href="PaginaLogin.php"><b>Login</b></a></li>
                 </ul>
             </nav>
         </header>
@@ -65,9 +68,9 @@
                     
                     <div class="btnRadio">
                         <input type="radio" name="tOpcao" id="tOpcao1" value="domestica">
-                        <label for="tOpcao1">Sou prestador de Serviço</label><br>
+                        <label for="tOpcao">Sou prestador de Serviço</label><br>
                         <input type="radio" name="tOpcao" id="tOpcao2" value="cliente">
-                        <label for="tOpcao2">Sou contratante</label>
+                        <label for="tOpcao">Sou contratante</label>
                     </div>
 
                     <input type="submit" value="Cadastrar"> 
@@ -78,16 +81,37 @@
 
                             $conexao = new Conexao();
                             $conexao->conectar();
-                            
+
                             $incluir = new Inserir();
-                            $incluir->insert($conexao)
+                            $incluir->insert($conexao,
+                            $_POST['tCPF'],  
+                            $_POST['tNome'],
+                            $_POST['tDataNascimento'], 
+                            $_POST['tRua'],                             
+                            $_POST['tCidade'], 
+                            $_POST['tBairro'], 
+                            $_POST['tNumero'], 0 , 
+                            $_POST['tSenha'], 
+                            $_POST['tEmail'], 
+                            $_POST['tWhats'], 
+                            'Vazio', 'Vazio', 'Vazio', 'Vazio');
 
                         }else{
                             $conexao = new Conexao();
                             $conexao->conectar();
 
-                            $incluir = new Inserir();
-                            $incluir->insert($conexao, $_POST['tNome'], $_POST['tCPF'], $_POST['tDataNascimento'], $_POST['tCidade'], $_POST['Bairro'], $_POST['tNumero'], 0 , $_POST['tSenha'], $_POST['tEmail'], $_POST['tWhats'], 'Vazio', 'Vazio', 'Vazio', 'Vazio');
+                            $incluir = new InserirCliente();
+                            $incluir->cadastrar($conexao, 
+                            $_POST['tCPF'], 
+                            $_POST['tNome'], 
+                            $_POST['tDataNascimento'], 
+                            $_POST['tRua'],                             
+                            $_POST['tCidade'], 
+                            $_POST['tBairro'], 
+                            $_POST['tNumero'], 0 , 
+                            $_POST['tSenha'], 
+                            $_POST['tEmail'], 
+                            $_POST['tWhats']);
 
                         }//Fim if else
                         

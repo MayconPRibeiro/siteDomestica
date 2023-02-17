@@ -11,14 +11,14 @@
 
         
 
-        public function insert(Conexao $conexao,
-            
+        public function insert(
+            Conexao $conexao,
             string $cpf, 
             string $nome, 
             string $Nascimento, 
             string $rua,
-            string $bairro,
             string $cidade,
+            string $bairro,            
             int $numero,
             int $avaliacao,
             string $senha,
