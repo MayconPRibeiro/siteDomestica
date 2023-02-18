@@ -28,7 +28,7 @@
                     <li><a href="#"><b>Como funciona?</b></a></li>
                     <li><a href="#"><b>Quem Somos?</b></a></li>
                     <li><a href="#"><b>Cadastre-se</b></a></li>
-                    <li><a href="#"><b>Login</b></a></li>
+                    <li><a href="PaginaLogin.php"><b>Login</b></a></li>
                 </ul>
             </nav>
         </header>
@@ -39,7 +39,7 @@
         </p>
         <div id="formularioPerfil">
             <div id="formularioInterno">
-                <form> 
+                <form method='POST'> 
                     <label for="tNome">Nome</label>
                     <input type="text" id="tNome" name="tNome" disabled>
     
@@ -69,16 +69,13 @@
 
                     <?php
 
-                        if($_POST['tCpf'] != ""){
-
+                       
                             $conexao = new Conexao();
                             $consul = new Consultar();
 
-                            echo $consul->ConsultarMeusDados($conexao, "domestica", $_POST['tCpf']);
-                            return;
-                        }//Fim if
+                            $consul->ConsultarMeusDados($conexao, "domestica", $_POST['tCpf']);
 
-                        echo "Ops, preencha os campos";
+                            
 
                     ?>
 

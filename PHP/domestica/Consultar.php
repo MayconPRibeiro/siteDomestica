@@ -24,16 +24,16 @@
                     $dataCorrigida = $dia."/".$mes."/".$ano;
 
                     if($dados['cpf'] == $cpf){
-                        echo "<br>Cpf: ".$dados["cpf"].
-                        "<br>Nome: ".$dados["nome"].
-                        "<br>Data de Nascimento: ".$dataCorrigida.
-                        "<br>Rua: ".$dados["rua"].
-                        "<br>Bairro: ".$dados["bairro"].
-                        "<br>Cidade: ".$dados["cidade"].
-                        "<br>Número: ".$dados["numero"].
-                        "<br>Email: ".$dados["email"].
-                        "<br>Telefone: ".$dados["telefone"].
-                        "<br>Avaliação: ".$dados["avaliacao"];
+                        $_POST['tCPF'] = $dados["cpf"];
+                        $_POST['tNome'] = $dados["nome"];
+                        $_POST['tNascimento'] = $dataCorrigida;
+                        $_POST['tRua'] = $dados["rua"];
+                        $_POST['tBairro'] = $dados["bairro"];
+                        $_POST['tCidade'] = $dados["cidade"];
+                        $_POST['tNumero'] = $dados["numero"];
+                        $_POST['tEmail'] = $dados["email"];
+                        $_POST['tTelefone'] = $dados["telefone"];
+                        $_POST['tAvaliacao'] = $dados["avaliacao"];
                         return;
                     }//Fim if
                 }//Fim while
@@ -95,6 +95,32 @@
                 }else{
 
                     header("location: PerfilFaxineira.php");
+                    exit();
+                    
+                }
+
+            }catch(Except $erro){
+
+                echo $erro;
+
+            }//Fim try catch
+
+        }//Fim function logar
+
+        public function logarCliente(Conexao $conexao, string $cpf, string $senha){
+
+            try{
+                $conn = $conexao->Conectar();
+                $sql = "select * from cliente where cpf = '$cpf' and senha = '$senha'";
+                $result = mysqli_query($conn, $sql);
+                $verificar = mysqli_num_rows($result);
+
+                if($verificar == 0){
+                    echo "Ops...Não encontrei, tente novamente";
+                    return;
+                }else{
+
+                    header("location: PerfilCliente.php");
                     exit();
                     
                 }

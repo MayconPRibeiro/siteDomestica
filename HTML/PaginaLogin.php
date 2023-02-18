@@ -53,6 +53,15 @@
                  <label for="tSenha"> <b>Senha:</b> </label>
                  <input type="password" name="tSenha" id="tSenha" placeholder="Insira sua senha">
 
+
+                 <br><br>
+                 <div class="btnRadio">
+                    <input type="radio" checked name="tOpcao" id="tOpcao1" value="domestica">
+                    <label for="tOpcao">Sou prestador de Serviço</label><br>
+                    <input type="radio" name="tOpcao" id="tOpcao2" value="cliente">
+                    <label for="tOpcao">Sou contratante</label><br>
+                 </div> 
+
                  <br>
                  <input value="Entrar" type="submit"> 
 
@@ -63,14 +72,26 @@
                     $conexao = new Conexao();
                     $conexao->conectar();
 
+                    if($_POST['tOpcao'] == 'domestica'){
+                        $entrar = new Consultar();
+                        $entrar->logar($conexao, $_POST['tCpf'], $_POST['tSenha']);
+                    }else{
 
-                    $entrar = new Consultar();
-                    $entrar->logar($conexao, $_POST['tCpf'], $_POST['tSenha']);
+                        $entrar = new Consultar();
+                        $entrar->logarCliente($conexao, $_POST['tCpf'], $_POST['tSenha']);
+
+                    }//Fim if else
+                    
+                    if($entrar){
+
+                        $perfil = new Consultar();
+                        $perfil->ConsultarMeusDados($conexao, 'domestica', $_POST['tCpf']);
+
+                    }//Fim if
+                    
                     
 
-                }
-
-
+                }//Fim if
 
 
                 ?>
