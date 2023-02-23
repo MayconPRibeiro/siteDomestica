@@ -73,7 +73,7 @@
                         <label for="tOpcao">Sou contratante</label>
                     </div>
 
-                    <input type="submit" value="Cadastrar"> 
+                    <input type="submit" value="Cadastrar" name="submit"> 
                     
                     <?php
 
