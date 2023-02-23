@@ -35,7 +35,8 @@ create table cliente(
 )Engine = InnoDB;
 
 create table anuncios(
-	cpf bigint not null primary key,
+	cod int not null primary key auto_increment,
+	cpf bigint not null,
     titulo varchar(50) not null,
     descricao varchar(1000) not null,
     valor decimal(10,2) not null,
