@@ -41,8 +41,7 @@
             <div id="formularioInterno">
 
             <?php
-                $consul = new Consultar();
-                $consul
+                 setcookie()
 
             ?>
                 
