@@ -1,11 +1,11 @@
 <?php
-    namespace Projeto\siteDomestica\HTML;
+    namespace siteDomestica\HTML;
 
     require_once("../PHP/domestica/Conexao.php");
     require_once("../PHP/domestica/Inserir.php");
 
-    use Projeto\siteDomestica\PHP\Conexao;
-    use Projeto\siteDomestica\PHP\Inserir;
+    use siteDomestica\PHP\domestica\Conexao;
+    use siteDomestica\PHP\domestica\Inserir;
 ?>
 
 <!DOCTYPE html>
@@ -15,11 +15,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Anúncio</title>
-    <link rel="stylesheet" href="../css/styleTelaCriarAnuncio.css">
+    <link rel="stylesheet" href="../css/styleCriarAnuncio.css">
 </head>
     <body>
         <header id="navegacao">   
+            <a href="http://localhost/siteDomestica/Html/PaginaPrincipal.php">   
             <img id="logo" src="../imagens/iconeSite.png" alt="Icone do Site"> 
+            </a>
             <nav>
                 <ul class="navLink">
                     <li><a href="#"><b>Como funciona?</b></a></li>
@@ -61,7 +63,7 @@
                 if(isset($_POST['submit'])) {
                     $caminho = "";
                     $conexao = new Conexao();
-                    $inser  = new InserirCliente();
+                    $inser  = new Inserir();
 
                     $nome       = $_FILES['image']['name'];
                     $tmp        = $_FILES['image']['tmp_name'];

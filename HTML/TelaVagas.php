@@ -1,14 +1,13 @@
 <?php
-    namespace Projeto\FaxiLover\Tela;
-    require_once("../DAO/Conexao.php");
-    use Projeto\FaxiLover\DAO\Conexao;
+    namespace siteDomestica\HTML;
+    require_once("../PHP/domestica/Conexao.php");
+    use siteDomestica\PHP\domestica\Conexao;
 
     $conexao = new Conexao();
     $conn   = $conexao->conectar();
     $sql    = "select * from anuncio";
     $result = mysqli_query($conn,$sql);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -21,7 +20,9 @@
 </head>
     <body>
         <header id="navegacao">   
+            <a href="http://localhost/siteDomestica/Html/PaginaPrincipal.php">   
             <img id="logo" src="../imagens/iconeSite.png" alt="Icone do Site"> 
+            </a>
             <nav>
                 <ul class="navLink">
                     <li><a href="#"><b>Como funciona?</b></a></li>
@@ -80,25 +81,7 @@
                 </div>
                 <div>
                     <form method="POST">
-                        <input type="hidden" name="codigo" value="<?php echo $dados['cod']; ?>">
-                        <button type="submit" name="interesse">Tenho Interesse</button>
-
-                        <?php
-                            if(isset($_POST['interesse'])){
-                                try {
-                                    $codigoVaga = $_POST['codigo'];
-                                    $sql2    = "insert into candidatura (codigoCandidatura, codigoVaga, nome, telefone) values ('', '$codigoVaga', 'Andressa', '11970707070')";
-                                    $result2 = mysqli_query($conn,$sql2);
-                                    if($result2){
-                                        echo "Resgistrado";
-                                    } else {
-                                        echo "Não registrado";
-                                    }
-                                } catch(Except $erro) {
-                                    echo $erro;
-                                }
-                            }
-                        ?>
+                        <button type="button" class="interesse-btn" data-linha="<?php echo $dados['cod']; ?>">Tenho interesse</button>
                     </form>
                 </div>
             </div>
@@ -106,5 +89,24 @@
                 }
             ?>
         </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            $(document).on('click', '.interesse-btn', function() {
+                var linha = $(this).data('linha');
+                $.ajax({
+                    url: 'operacaoCandidatura.php',
+                    method: 'POST',
+                    data: {linha: linha},
+                    success: function(response) {
+                        alert(response); // display the response message
+                    },
+                    error: function(xhr, status, error) {
+                        alert('Error: ' + error); // display the error message
+                    }
+                });
+            });
+        });
+        </script>
     </body>
 </html>

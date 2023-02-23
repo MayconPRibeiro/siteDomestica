@@ -27,7 +27,9 @@
 </head>
     <body>
         <header id="nav">   
+            <a href="http://localhost/siteDomestica/Html/PaginaPrincipal.php">   
             <img id="logo" src="../imagens/iconeSite.png" alt="Icone do Site"> 
+            </a>
             <nav>
                 <ul class="navLink">
                     <li><a href="#"><b>Como funciona?</b></a></li>
