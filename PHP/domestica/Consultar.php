@@ -94,7 +94,8 @@
                     return;
                 }else{
 
-                    header("location: PerfilFaxineira.php");
+                    
+                    header("location: PerfilPrestador.php");
                     exit();
                     
                 }

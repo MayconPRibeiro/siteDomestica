@@ -39,52 +39,47 @@
         </p>
         <div id="formularioPerfil">
             <div id="formularioInterno">
+
+            <?php
+                $consul = new Consultar();
+                $consul
+
+            ?>
+                
                 <form method='POST'> 
                     <label for="tNome">Nome</label>
-                    <input type="text" id="tNome" name="tNome" disabled>
+                    <input type="text" id="tNome" name="tNome"  disabled>
     
                     <label for="tData">Data de Nascimento</label>
                     <input type="text" id="tData" name="tData" disabled>
     
                     <label for="tTelefone">Telefone</label>
-                    <input type="text" name="tTelefone" id="tTelefone">
+                    <input type="text" name="tTelefone" id="tTelefone" disabled>
     
                     <label for="tCPF">CPF</label>
                     <input type="text" name="tCPF" id="tCPF" disabled>
     
                     <label for="tRua">Rua</label>
-                    <input type="text" name="tRua" id="tRua">
+                    <input type="text" name="tRua" id="tRua" disabled>
     
                     <label for="tNumero">Numero</label>
-                    <input type="text" name="tNumero" id="tNumero">
+                    <input type="text" name="tNumero" id="tNumero" disabled>
     
                     <label for="tBairro">Bairro</label>
-                    <input type="text" name="tBairro" id="tBairro">
+                    <input type="text" name="tBairro" id="tBairro" disabled>
     
                     <label for="tCidade">Cidade</label>
-                    <input type="text" name="tCidade" id="tCidade">
+                    <input type="text" name="tCidade" id="tCidade" disabled>
     
+                    <br>
                     <input type="submit" value="Atualizar Informações">
-
-
-                    <?php
-
-                       
-                            $conexao = new Conexao();
-                            $consul = new Consultar();
-
-                            $consul->ConsultarMeusDados($conexao, "domestica", $_POST['tCpf']);
-
-                            
-
-                    ?>
 
 
                 </form>
             </div>
             <div id="opcoesBotoes">   
-                <button class="botao">Adicionar Bairros de Interesse</button>
-                <button class="botao">Procurar Vagas</button>
+               <a href="AdicionarBairros.php"><button class="botao">Adicionar Bairros de Interesse</button></a>
+               <a href="TelaVagas.php"><button class="botao">Procurar Vagas</button></a>
             </div>
         </div>
     </body>

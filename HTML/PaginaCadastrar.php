@@ -77,6 +77,8 @@
                     
                     <?php
 
+                    if(isset($_POST['submit'])){
+
                         if($_POST['tOpcao'] == 'domestica'){
 
                             $conexao = new Conexao();
@@ -114,6 +116,9 @@
                             $_POST['tWhats']);
 
                         }//Fim if else
+
+
+                    }//Fim isset
                         
 
 

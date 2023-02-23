@@ -14,8 +14,8 @@
                 <ul class="navLink">
                     <li><a href="#"><b>Como funciona?</b></a></li>
                     <li><a href="#"><b>Quem Somos?</b></a></li>
-                    <li><a href="PaginaCadastrar.html"><b>Cadastre-se</b></a></li>
-                    <li><a href="PaginaLogin.html"><b>Login</b></a></li>
+                    <li><a href="PaginaCadastrar.php"><b>Cadastre-se</b></a></li>
+                    <li><a href="PaginaLogin.php"><b>Login</b></a></li>
                 </ul>
             </nav>
         </header>
@@ -45,26 +45,22 @@
         </div>
         <h2>Quem Somos?</h2>
         <div id="containerQuemSomos">
-            <div class="linha">
-                <div><img id="logoLongo" src="../imagens/logoLongo.png" alt="Logo FaxiLover"></div>
-                <div>
-                    Nascemos em 2023 comprometidos com nossos clientes e colaboradores <br><br> 
+            <img id="logoLongo" src="../imagens/logoLongo.png" alt="Logo FaxiLover">
+            <div>
+                <h3>Nascemos em 2023 comprometidos com nossos clientes e colaboradores <br></h3>
+                <p>
                     Nós da Faxi Lover, temos a missão de unir trabalhadores do setor de limpeza 
                     aos empregadores que necessitam desse serviço. 
                     Fornecemos uma ótima solução para renda extra e satisfação dos nossos clientes.
-                </div>
+                </p>
             </div>
         </div>
-
-  
-
-
-
-
-
-
-
-
-
+        <div id="foot">
+            <p>
+                Endereço: Avenida Senador Vergueiro, N° 400 - São Bernardo do Campo - São Paulo
+            </p>
+            <img id="iconeTwitter" src="../imagens/icone-twitter.png" alt="Ícone icone-twitter">
+            <img src="../imagens/icone-whats.png" alt="Ícone whatsapp">
+        </div>
     </body>
 </html>
