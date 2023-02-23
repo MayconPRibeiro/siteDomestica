@@ -9,7 +9,7 @@ class Conexao{
         try{
             $conn = mysqli_connect('localhost', 'root' , '' ,'site');
             if($conn){
-                echo "<br>Conectado com sucesso!";
+                
                 return $conn;
                 
             }//fim do if

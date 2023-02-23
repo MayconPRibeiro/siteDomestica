@@ -77,7 +77,8 @@
                     
                     <?php
 
-                    if(isset($_POST['submit'])){
+                    if(isset($_POST['submit'])){                        
+
 
                         if($_POST['tOpcao'] == 'domestica'){
 

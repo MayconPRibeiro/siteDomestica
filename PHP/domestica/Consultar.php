@@ -8,7 +8,9 @@
 
     class Consultar{
 
-        public function ConsultarMeusDados(Conexao $conexao, string $nomeDaTabela, string $cpf){
+        
+
+        public function ConsultarNascimento(Conexao $conexao, string $nomeDaTabela, string $cpf){
 
             try{
                 $conn = $conexao->Conectar();
@@ -24,23 +26,181 @@
                     $dataCorrigida = $dia."/".$mes."/".$ano;
 
                     if($dados['cpf'] == $cpf){
-                        $_POST['tCPF'] = $dados["cpf"];
-                        $_POST['tNome'] = $dados["nome"];
-                        $_POST['tNascimento'] = $dataCorrigida;
-                        $_POST['tRua'] = $dados["rua"];
-                        $_POST['tBairro'] = $dados["bairro"];
-                        $_POST['tCidade'] = $dados["cidade"];
-                        $_POST['tNumero'] = $dados["numero"];
-                        $_POST['tEmail'] = $dados["email"];
-                        $_POST['tTelefone'] = $dados["telefone"];
-                        $_POST['tAvaliacao'] = $dados["avaliacao"];
-                        return;
+
+                        echo $dataCorrigida;
+
                     }//Fim if
+
                 }//Fim while
             }catch(Except $erro){
                 echo $erro;
             }//Fim try catch
-        }//Fim Function
+        }//Fim function  
+        
+        
+        public function ConsultarNome(Conexao $conexao, string $nomeDaTabela, string $cpf){
+
+            try{
+                $conn = $conexao->Conectar();
+                $sql = "select * from $nomeDaTabela where cpf = '$cpf'";
+                $result = mysqli_query($conn, $sql);
+
+                while ($dados = mysqli_fetch_Array($result)){
+
+
+                    if($dados['cpf'] == $cpf){
+
+                        echo $dados['nome'];
+                        
+
+                    }//Fim if
+
+                }//Fim while
+
+            }catch(Except $erro){
+                echo $erro;
+            }//Fim try catch
+
+        }//Fim function 
+
+
+
+        public function ConsultarTelefone(Conexao $conexao, string $nomeDaTabela, string $cpf){
+
+            try{
+                $conn = $conexao->Conectar();
+                $sql = "select * from $nomeDaTabela where cpf = '$cpf'";
+                $result = mysqli_query($conn, $sql);
+
+                while ($dados = mysqli_fetch_Array($result)){
+
+                    
+                    if($dados['cpf'] == $cpf){
+
+                        echo $dados['telefone'];
+
+                    }//Fim if
+
+                }//Fim while
+            }catch(Except $erro){
+                echo $erro;
+            }//Fim try catch
+        }//Fim function 
+
+        public function ConsultarCpf(Conexao $conexao, string $nomeDaTabela, string $cpf){
+
+            try{
+                $conn = $conexao->Conectar();
+                $sql = "select * from $nomeDaTabela where cpf = '$cpf'";
+                $result = mysqli_query($conn, $sql);
+
+                while ($dados = mysqli_fetch_Array($result)){
+
+                    
+                    if($dados['cpf'] == $cpf){
+
+                        echo $dados['cpf'];
+
+                    }//Fim if
+
+                }//Fim while
+            }catch(Except $erro){
+                echo $erro;
+            }//Fim try catch
+        }//Fim function 
+
+        public function ConsultarRua(Conexao $conexao, string $nomeDaTabela, string $cpf){
+
+            try{
+                $conn = $conexao->Conectar();
+                $sql = "select * from $nomeDaTabela where cpf = '$cpf'";
+                $result = mysqli_query($conn, $sql);
+
+                while ($dados = mysqli_fetch_Array($result)){
+
+                    
+                    if($dados['cpf'] == $cpf){
+
+                        echo $dados['rua'];
+
+                    }//Fim if
+
+                }//Fim while
+            }catch(Except $erro){
+                echo $erro;
+            }//Fim try catch
+        }//Fim function 
+
+        public function ConsultarNumero(Conexao $conexao, string $nomeDaTabela, string $cpf){
+
+            try{
+                $conn = $conexao->Conectar();
+                $sql = "select * from $nomeDaTabela where cpf = '$cpf'";
+                $result = mysqli_query($conn, $sql);
+
+                while ($dados = mysqli_fetch_Array($result)){
+
+                    
+                    if($dados['cpf'] == $cpf){
+
+                        echo $dados['numero'];
+
+                    }//Fim if
+
+                }//Fim while
+            }catch(Except $erro){
+                echo $erro;
+            }//Fim try catch
+        }//Fim function 
+
+        public function ConsultarBairro(Conexao $conexao, string $nomeDaTabela, string $cpf){
+
+            try{
+                $conn = $conexao->Conectar();
+                $sql = "select * from $nomeDaTabela where cpf = '$cpf'";
+                $result = mysqli_query($conn, $sql);
+
+                while ($dados = mysqli_fetch_Array($result)){
+
+                    
+                    if($dados['cpf'] == $cpf){
+
+                        echo $dados['bairro'];
+
+                    }//Fim if
+
+                }//Fim while
+            }catch(Except $erro){
+                echo $erro;
+            }//Fim try catch
+        }//Fim function
+        
+        public function ConsultarCidade(Conexao $conexao, string $nomeDaTabela, string $cpf){
+
+            try{
+                $conn = $conexao->Conectar();
+                $sql = "select * from $nomeDaTabela where cpf = '$cpf'";
+                $result = mysqli_query($conn, $sql);
+
+                while ($dados = mysqli_fetch_Array($result)){
+
+                    
+                    if($dados['cpf'] == $cpf){
+
+                        echo $dados['cidade'];
+
+                    }//Fim if
+
+                }//Fim while
+            }catch(Except $erro){
+                echo $erro;
+            }//Fim try catch
+        }//Fim function 
+
+        
+
+
+
 
 
         public function consultarVagas(Conexao $conexao){

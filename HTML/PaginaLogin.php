@@ -63,37 +63,34 @@
                  </div> 
 
                  <br>
-                 <input value="Entrar" type="submit"> 
+                 <input name="submit" value="Entrar" type="submit"> 
 
 
                  <?php
 
-                if($_POST['tCpf'] != "" && $_POST['tSenha'] != ""){
-                    $conexao = new Conexao();
-                    $conexao->conectar();
+                if(isset($_POST['submit'])){
 
-                    if($_POST['tOpcao'] == 'domestica'){
-                        $entrar = new Consultar();
-                        setcookie('cookie', $_POST['tCpf']);
-                        $entrar->logar($conexao, $_POST['tCpf'], $_POST['tSenha']);
-                    }else{
 
-                        $entrar = new Consultar();
-                        setcookie('user', $_POST['tCpf']);
-                        $entrar->logarCliente($conexao, $_POST['tCpf'], $_POST['tSenha']);
+                    if($_POST['tCpf'] != "" && $_POST['tSenha'] != ""){
+                        $conexao = new Conexao();
+                        $conexao->conectar();
 
-                    }//Fim if else
-                    
-                    if($entrar){
+                        if($_POST['tOpcao'] == 'domestica'){
+                            $entrar = new Consultar();
+                            setcookie('user', $_POST['tCpf']);
+                            $entrar->logar($conexao, $_POST['tCpf'], $_POST['tSenha']);
+                        }else{
 
-                        $perfil = new Consultar();
-                        $perfil->ConsultarMeusDados($conexao, 'domestica', $_POST['tCpf']);
+                            $entrar = new Consultar();
+                            setcookie('user', $_POST['tCpf']);
+                            $entrar->logarCliente($conexao, $_POST['tCpf'], $_POST['tSenha']);
+
+                        }//Fim if else
+                        
+                        
 
                     }//Fim if
-                    
-                    
-
-                }//Fim if
+                }//Fim isset
 
 
                 ?>
