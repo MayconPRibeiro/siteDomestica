@@ -1,20 +1,21 @@
 <?php
-    namespace Projeto\FaxiLover\Tela;
+    namespace Projeto\siteDomestica\HTML;
 
-    require_once("../DAO/Conexao.php");
-    require_once("../DAO/Cadastrar.php");
+    require_once("../PHP/domestica/Conexao.php");
+    require_once("../PHP/domestica/Inserir.php");
 
-    use Projeto\FaxiLover\DAO\Conexao;
-    use Projeto\FaxiLover\DAO\Cadastrar;
+    use Projeto\siteDomestica\PHP\Conexao;
+    use Projeto\siteDomestica\PHP\Inserir;
 ?>
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crie seu anuncio!</title>
-    <link rel="stylesheet" href="../css/styleTelaCadastrar.css">
+    <title>Criar Anúncio</title>
+    <link rel="stylesheet" href="../css/styleTelaCriarAnuncio.css">
 </head>
     <body>
         <header id="navegacao">   
@@ -23,79 +24,67 @@
                 <ul class="navLink">
                     <li><a href="#"><b>Como funciona?</b></a></li>
                     <li><a href="#"><b>Quem Somos?</b></a></li>
-                    <li><a href="PaginaCadastrar.html"><b>Cadastre-se</b></a></li>
-                    <li><a href="PaginaLogin.html"><b>Login</b></a></li>
+                    <li><a href="#"><b>Cadastre-se</b></a></li>
+                    <li><a href="#"><b>Login</b></a></li>
                 </ul>
             </nav>
-        </header>        
+        </header>
 
-        <div id="blocoCadastrar">
-            <h3>Crie seu anúncio</h3>         
+        <form id="CadastrarAnuncio" method="POST" enctype="multipart/form-data">
+            <label for="titulo">Título</label>
+            <input type="text" name="titulo" id="titulo" required>
 
+            <label for="descricao">Descrição</label>
+            <input type="text" name="descricao" id="descricao" required>
 
-            <div id="formulario">
-                <form method="POST">
-                    <label for="tTitulo">Título:</label>
-                    <input type="text" id="tTitulo" name="tTitulo" placeholder="Insira o título do seu anuncio aqui." >
-    
-                    <label for="tDescricao">Descrição:</label>
-                    <input type="text" id="tDescricao" name="tDescricao" placeholder="Descreva o serviço que você precisa.">
-                     <p>Informe abaixo o seu endereço:<p>
-                    <label for="tLogradouro">Logradouro:</label>
-                    <input type="text" name="tLogradouro" id="tLogradouro">
-    
-                    <label for="tNumero">Numero:</label>
-                    <input type="text" name="tNumero" id="tNumero">
-    
-                    <label for="tBairro">Bairro:</label>
-                    <input type="text" name="tBairro " id="tBairro">
-    
-                    <label for="tCidade">Cidade</label>
-                    <input type="text" name="tCidade" id="tCidade"> 
+            <label for="logradouro">Rua</label>
+            <input type="text" name="logradouro" id="logradouro" required>
 
-                    <label for="valor">Valor</label>
-                    <input type="number" name="valor" id="valor" placeholder="100.00" required>
-        
-                    <label for="image">Selecione uma imagem</label>
-                    <input type="file" name="image"  accept=".png, .jpg" required>
-        
-                                           
-                    <div class="opcoes">  
-                        <button class="botao"> Criar anúncio </button>
-                        <button class="botao">Voltar</button>
-                         </div>
+            <label for="numero">Número</label>
+            <input type="number" name="numero" id="numero" required>
 
-                        
-                        <?php
-                        if(isset($_POST['submit'])) {
-                            $caminho = "";
-                            $conexao = new Conexao();
-                            $insert  = new Cadastrar();
-        
-                            $nome       = $_FILES['image']['name'];
-                            $tmp        = $_FILES['image']['tmp_name'];
-                            $tamanho    = $_FILES['image']['size'];
-                            $errors     = $_FILES['image']['error'];
-        
-                            $imagemTipo = explode('.', $nome);
-                            $imagemTipoNew = strtolower(end($imagemTipo));
-        
-                            if($errors === 0) {
-                                if($tamanho < 4000000) {
-                                    $novoNome = uniqid('', true).".".$imagemTipoNew;
-                                    $caminho = 'uploads/'.$novoNome;
-                                    move_uploaded_file($tmp, $caminho);
-                                } else {
-                                    echo "Imagem grande demais!";
-                                }
-                            } else {
-                                echo "Houve um erro!";
-                            }
-                            echo $insert->inserir($conexao, '123456789', $_POST['titulo'], $_POST['descricao'], $_POST['logradouro'], $_POST['numero'], $_POST['bairro'], $_POST['cidade'], $_POST['valor'], $caminho);
-                        } 
-                    ?>
-                </form>
-            </div>
-        </div>
+            <label for="bairro">Bairro</label>
+            <input type="text" name="bairro" id="bairro" required>
+
+            <label for="cidade">Cidade</label>
+            <input type="text" name="cidade" id="cidade" required>
+
+            <label for="valor">Valor</label>
+            <input type="number" name="valor" id="valor" placeholder="100.00" required>
+
+            <label for="image">Selecione uma imagem</label>
+            <input type="file" name="image"  accept=".png, .jpg" required>
+
+            <button type=submit name="submit">Cadastrar</button>
+
+            <?php
+                if(isset($_POST['submit'])) {
+                    $caminho = "";
+                    $conexao = new Conexao();
+                    $inser  = new InserirCliente();
+
+                    $nome       = $_FILES['image']['name'];
+                    $tmp        = $_FILES['image']['tmp_name'];
+                    $tamanho    = $_FILES['image']['size'];
+                    $errors     = $_FILES['image']['error'];
+
+                    $imagemTipo = explode('.', $nome);
+                    $imagemTipoNew = strtolower(end($imagemTipo));
+
+                    if($errors === 0) {
+                        if($tamanho < 4000000) {
+                            $novoNome = uniqid('', true).".".$imagemTipoNew;
+                            $caminho = 'uploads/'.$novoNome;
+                            move_uploaded_file($tmp, $caminho);
+                        } else {
+                            echo "Imagem grande demais!";
+                        }
+                    } else {
+                        echo "Houve um erro!";
+                    }
+                    echo $inser->inserirAnuncio($conexao, '123456789', $_POST['titulo'], $_POST['descricao'], $_POST['logradouro'], $_POST['numero'], $_POST['bairro'], $_POST['cidade'], $_POST['valor'], $caminho);
+                } 
+            ?>
+        </form>
     </body>
 </html>

@@ -53,15 +53,3 @@ create table candidatura(
 	nome varchar(100) not null,
 	telefone varchar(11) not null
 ) Engine = InnoDB;
-
-insert into anuncios(cpf, titulo, descricao, valor, cidade, logradouro, bairro, numero, dataPublicacao) values ('123', 'trampo', 'trampao bom', '15', 'sbc', 'rua 2', 'montanhão', '2152', '2023-02-14');
-
-
-insert into domestica (cpf, nome, dataDeNascimento, rua, bairro, cidade, numero, avaliacao, senha, email, telefone, interesse1, interesse2, interesse3, interesse4) values ('1235','ana','2005-02-02','rua','bairro','cidade','13','2','abc','email','119999999', 'SBC','Diadema', 'SP', 'Pindamonhangaba');
-
-
-select * from domestica;
-
-
-
-drop table anuncios;
