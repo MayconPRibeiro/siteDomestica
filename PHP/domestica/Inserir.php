@@ -8,9 +8,6 @@
     use siteDomestica\PHP\domestica\Conexao;
 
     Class Inserir{
-
-        
-
         public function insert(
             Conexao $conexao,
             string $cpf, 

@@ -4,7 +4,6 @@ namespace siteDomestica\PHP\domestica;
 
 class Conexao{
     
-        
     public function conectar(){
         try{
             $conn = mysqli_connect('localhost', 'root' , '' ,'site');
