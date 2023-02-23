@@ -24,10 +24,8 @@
             </a>
             <nav>
                 <ul class="navLink">
-                    <li><a href="#"><b>Como funciona?</b></a></li>
-                    <li><a href="#"><b>Quem Somos?</b></a></li>
-                    <li><a href="#"><b>Cadastre-se</b></a></li>
-                    <li><a href="#"><b>Login</b></a></li>
+                    <li><a href="PaginaCadastar.php"><b>Cadastre-se</b></a></li>
+                    <li><a href="PaginaLogin.php"><b>Login</b></a></li>
                 </ul>
             </nav>
         </header>
@@ -57,7 +55,7 @@
             <label for="image">Selecione uma imagem</label>
             <input type="file" name="image"  accept=".png, .jpg" required>
 
-            <button type=submit name="submit">Cadastrar</button>
+            <button type=submit name="submit">Criar Anúncio</button>
 
             <?php
                 if(isset($_POST['submit'])) {

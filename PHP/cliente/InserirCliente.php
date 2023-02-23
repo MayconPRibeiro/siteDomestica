@@ -4,6 +4,7 @@
     require_once('../PHP/domestica/Conexao.php');
 
     use siteDomestica\PHP\domestica\Conexao;
+    
 
     class InserirCliente{
         
@@ -38,6 +39,8 @@
             }//fim do catch
 
         }//fim do cadastrar
+
+    }//Fim da classe
             
         
 

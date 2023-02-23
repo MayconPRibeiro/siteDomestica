@@ -8,6 +8,7 @@ class Conexao{
         try{
             $conn = mysqli_connect('localhost', 'root' , '' ,'site');
             if($conn){
+
                 
                 return $conn;
                 

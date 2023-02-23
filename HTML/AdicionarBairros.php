@@ -15,10 +15,8 @@
 
             <nav>
                 <ul class="navLink">
-                    <li><a href="#"><b>Como funciona?</b></a></li>
-                    <li><a href="#"><b>Quem Somos?</b></a></li>
-                    <li><a href="#"><b>Cadastre-se</b></a></li>
-                    <li><a href="#"><b>Login</b></a></li>
+                    <li><a href="PaginaCadastrar.php"><b>Cadastre-se</b></a></li>
+                    <li><a href="PaginaLogin.php"><b>Login</b></a></li>
                 </ul>
             </nav>
         </header>
