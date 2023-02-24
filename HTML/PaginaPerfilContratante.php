@@ -51,28 +51,28 @@
                 
                 <form method='POST'> 
                     <label for="tNome">Nome</label>
-                    <input type="text" id="tNome" name="tNome" value="<?php $consul->consultarNome($conexao, 'domestica', $_COOKIE['user']); ?>"  disabled>
+                    <input type="text" id="tNome" name="tNome" value="<?php $consul->consultarNome($conexao, 'cliente', $_COOKIE['user']); ?>"  disabled>
     
                     <label for="tData">Data de Nascimento</label>
-                    <input type="text" id="tData" name="tData" value="<?php $consul->ConsultarNascimento($conexao, 'domestica', $_COOKIE['user']); ?>" disabled>
+                    <input type="text" id="tData" name="tData" value="<?php $consul->ConsultarNascimento($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
     
                     <label for="tTelefone">Telefone</label>
-                    <input type="text" name="tTelefone" id="tTelefone" value="<?php $consul->ConsultarTelefone($conexao, 'domestica', $_COOKIE['user']); ?>" disabled>
+                    <input type="text" name="tTelefone" id="tTelefone" value="<?php $consul->ConsultarTelefone($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
     
                     <label for="tCPF">CPF</label>
-                    <input type="text" name="tCPF" id="tCPF" value="<?php $consul->consultarCpf($conexao, 'domestica', $_COOKIE['user']); ?>" disabled>
+                    <input type="text" name="tCPF" id="tCPF" value="<?php $consul->consultarCpf($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
     
                     <label for="tRua">Rua</label>
-                    <input type="text" name="tRua" id="tRua" value="<?php $consul->consultarRua($conexao, 'domestica', $_COOKIE['user']); ?>" disabled>
+                    <input type="text" name="tRua" id="tRua" value="<?php $consul->consultarRua($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
     
                     <label for="tNumero">Numero</label>
-                    <input type="text" name="tNumero" id="tNumero" value="<?php $consul->consultarNumero($conexao, 'domestica', $_COOKIE['user']); ?>" disabled>
+                    <input type="text" name="tNumero" id="tNumero" value="<?php $consul->consultarNumero($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
     
                     <label for="tBairro">Bairro</label>
-                    <input type="text" name="tBairro" id="tBairro" value="<?php $consul->consultarBairro($conexao, 'domestica', $_COOKIE['user']); ?>" disabled>
+                    <input type="text" name="tBairro" id="tBairro" value="<?php $consul->consultarBairro($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
     
                     <label for="tCidade">Cidade</label>
-                    <input type="text" name="tCidade" id="tCidade" value="<?php $consul->consultarCidade($conexao, 'domestica', $_COOKIE['user']); ?>" disabled>
+                    <input type="text" name="tCidade" id="tCidade" value="<?php $consul->consultarCidade($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
     
                     <br>
                     <input type="submit" value="Atualizar Informações">

@@ -48,8 +48,16 @@
                     <input type="submit" value="Salvar cidades de interesse">
 
                     <?php
-                        
+                        if(isset($_POST['submit'])){
+                            $conexao = new Conexao();
+                            $cidade  = new Inserir();
 
+                            echo $cidade-> Insert($conexao, 
+                            $_POST['tCidade1'],
+                            $_POST['tCidade2'],
+                            $_POST['tCidade3'],
+                            $_POST['tCidade4']); 
+                        }//fim do isset
                     ?>
                 </form>
             </div>

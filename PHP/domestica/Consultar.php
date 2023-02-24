@@ -281,7 +281,7 @@
                     return;
                 }else{
 
-                    header("location: PerfilCliente.php");
+                    header("location: PaginaPerfilContratante.php");
                     exit();
                     
                 }
