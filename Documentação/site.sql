@@ -60,7 +60,7 @@ insert into anuncios(cpf, titulo, descricao, valor, cidade, logradouro, bairro, 
 insert into domestica (cpf, nome, dataDeNascimento, rua, bairro, cidade, numero, avaliacao, senha, email, telefone, interesse1, interesse2, interesse3, interesse4) values ('1235','ana','2005-02-02','rua','bairro','cidade','13','2','abc','email','119999999', 'SBC','Diadema', 'SP', 'Pindamonhangaba');
 
 
-select * from anuncios;
+select * from candidatura;
 
 
 
