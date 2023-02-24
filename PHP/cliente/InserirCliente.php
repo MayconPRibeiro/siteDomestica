@@ -30,7 +30,8 @@
                 mysqli_close($conn);//fechando a conexão com sucesso!
                 
                 if($result){
-                    return "<br><br>Inserido com sucesso!";
+                    echo "<br><br>Inserido com sucesso!";
+                    return;
                 }
                 return "<br><br>Não Inserido!";
             }

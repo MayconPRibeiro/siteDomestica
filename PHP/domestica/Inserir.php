@@ -29,17 +29,29 @@
 
                 try{
 
-                    $conn = $conexao->conectar();
-                    $sql = "insert into domestica (cpf, nome, dataDeNascimento, rua, cidade, bairro , numero, avaliacao, senha, email, telefone, interesse1, interesse2, interesse3, interesse4) values ('$cpf','$nome','$Nascimento','$rua','$cidade','$bairro','$numero','$avaliacao','$senha','$email','$telefone','$interesse1','$interesse2','$interesse3','$interesse4')";
-                    $result = mysqli_query($conn,$sql);
+                    if($verificar == 0){
 
-                    if($result){
-                        return "<br><br>Cadastrado(a) com sucesso!";
+                        $conn = $conexao->conectar();
+                        $sql = "insert into domestica (cpf, nome, dataDeNascimento, rua, cidade, bairro , numero, avaliacao, senha, email, telefone, interesse1, interesse2, interesse3, interesse4) values ('$cpf','$nome','$Nascimento','$rua','$cidade','$bairro','$numero','$avaliacao','$senha','$email','$telefone','$interesse1','$interesse2','$interesse3','$interesse4')";
+                        $result = mysqli_query($conn,$sql);
+
+                        if($result){
+                            echo "<br><br>Cadastrado(a) com sucesso!";
+                            return;
+                        }else{
+                            return "<br><br>Ops, Aconteceu um erro, tente novamente! :(";
+                        }//Fim if else
+
+                        mysqli_close($conn);
+
+
                     }else{
-                        return "<br><br>Ops, Aconteceu um erro, tente novamente! :(";
-                    }//Fim if else
+                        echo "Ops...Acho que você já possui cadastro :), faça login"
+                    }
 
-                    mysqli_close($conn);
+
+
+                    
 
                 }catch(Except $erro){
 
@@ -48,6 +60,28 @@
                 }//Fim try catch       
         
         }//Fim da function Inserir
+
+        public function jaExiste(Conexao $conexao, string $nomeTabela, float $cpf){
+
+            try{
+
+                $conn = conexao->conectar();
+                $sql = "select * from $nomeTabela where cpf = '$cpf'";
+                $result = mysqli_query($conn, $sql);
+                $verificar = mysqli_num_rows($result);
+
+                if($verificar == 0){
+
+                }else{
+                    echo "Ops...Acho que você já possui cadastro :), faça login"
+                }
+            
+            }catch(Except $erro){
+                echo $erro;
+            }
+
+
+        }//Fim function
 
         public function inserirAnuncio(
             Conexao $conexao, 

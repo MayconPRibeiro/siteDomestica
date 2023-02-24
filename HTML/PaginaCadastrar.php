@@ -115,18 +115,12 @@
                             $_POST['tSenha'], 
                             $_POST['tEmail'], 
                             $_POST['tWhats']);
-
                         }//Fim if else
 
 
                     }//Fim isset
-                        
-
-
 
                     ?>
-
-
 
                 </form>
             </div>
