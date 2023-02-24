@@ -29,6 +29,11 @@
 
                 try{
 
+                    $conn = conexao->conectar();
+                    $sql = "select * from $nomeTabela where cpf = '$cpf'";
+                    $result = mysqli_query($conn, $sql);
+                    $verificar = mysqli_num_rows($result);
+
                     if($verificar == 0){
 
                         $conn = $conexao->conectar();
@@ -47,11 +52,7 @@
 
                     }else{
                         echo "Ops...Acho que você já possui cadastro :), faça login"
-                    }
-
-
-
-                    
+                    }                    
 
                 }catch(Except $erro){
 

@@ -63,7 +63,7 @@
                  </div> 
 
                  <br>
-                 <input name="submit" value="Entrar" type="submit"> 
+                 <a href="PerfilPrestador.php"><input name="submit" value="Entrar" type="submit"></a> 
 
 
                  <?php
