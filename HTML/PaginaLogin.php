@@ -8,7 +8,7 @@
 
 
     use siteDomestica\PHP\domestica\Conexao;
-    use siteDomestica\PHP\domestica\Consultar
+    use siteDomestica\PHP\domestica\Consultar;
 
 
 
@@ -63,7 +63,7 @@
                  </div> 
 
                  <br>
-                 <a href="Pagina.php"><input name="submit" value="Entrar" type="submit"></a> 
+                 <a href="PerfilPrestador.php"><input name="submit" value="Entrar" type="submit"></a> 
 
 
                  <?php

@@ -1,3 +1,12 @@
+<?php
+    namespace siteDomestica\HTML;
+
+    require_once('../PHP/domestica/Conexao.php');
+    require_once('../PHP/domestica/Inserir.php');
+
+    use siteDomestica\PHP\domestica\Inserir;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -37,6 +46,11 @@
                     <input type="text" name="tCidade4" id="tCidade4">
     
                     <input type="submit" value="Salvar cidades de interesse">
+
+                    <?php
+                        
+
+                    ?>
                 </form>
             </div>
         </div>
