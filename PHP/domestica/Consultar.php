@@ -46,23 +46,18 @@
                 $result = mysqli_query($conn, $sql);
 
                 while ($dados = mysqli_fetch_Array($result)){
-
-
                     if($dados['cpf'] == $cpf){
-
-                        echo $dados['nome'];
-                                                
-
-                    }//Fim if
-
+                        return $dados['nome'];
+                    }//Fim 
                 }//Fim while
-
+                return "Não encontrado!";
             }catch(Except $erro){
                 echo $erro;
             }//Fim try catch
 
         }//Fim function 
-        
+
+
 
 
         public function ConsultarTelefone(Conexao $conexao, string $nomeDaTabela, string $cpf){
@@ -77,12 +72,13 @@
                     
                     if($dados['cpf'] == $cpf){
 
-                        echo $dados['telefone'];
+                        return $dados['telefone'];
                         
 
                     }//Fim if
 
                 }//Fim while
+                return "Não encontrado!";
             }catch(Except $erro){
                 echo $erro;
             }//Fim try catch

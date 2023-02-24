@@ -51,13 +51,13 @@
                 
                 <form method='POST'> 
                     <label for="tNome">Nome</label>
-                    <input type="text" id="tNome" name="tNome" value="<?php $consul->consultarNome($conexao, 'cliente', $_COOKIE['user']); ?>"  disabled>
+                    <input type="text" id="tNome" name="tNome" value="<?php echo $consul->consultarNome($conexao, 'cliente', $_COOKIE['user']); ?>"  disabled>
     
                     <label for="tData">Data de Nascimento</label>
                     <input type="text" id="tData" name="tData" value="<?php $consul->ConsultarNascimento($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
     
                     <label for="tTelefone">Telefone</label>
-                    <input type="text" name="tTelefone" id="tTelefone" value="<?php $consul->ConsultarTelefone($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
+                    <input type="text" name="tTelefone" id="tTelefone" value="<?php echo $consul->ConsultarTelefone($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
     
                     <label for="tCPF">CPF</label>
                     <input type="text" name="tCPF" id="tCPF" value="<?php $consul->consultarCpf($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
