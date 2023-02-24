@@ -30,7 +30,7 @@
                 try{
 
                     $conn = conexao->conectar();
-                    $sql = "select * from $nomeTabela where cpf = '$cpf'";
+                    $sql = "select * from domestica where cpf = '$cpf'";
                     $result = mysqli_query($conn, $sql);
                     $verificar = mysqli_num_rows($result);
 
@@ -51,7 +51,7 @@
 
 
                     }else{
-                        echo "Ops...Acho que você já possui cadastro :), faça login"
+                        echo "Ops...Acho que você já possui cadastro :), faça login";
                     }                    
 
                 }catch(Except $erro){
@@ -62,27 +62,6 @@
         
         }//Fim da function Inserir
 
-        public function jaExiste(Conexao $conexao, string $nomeTabela, float $cpf){
-
-            try{
-
-                $conn = conexao->conectar();
-                $sql = "select * from $nomeTabela where cpf = '$cpf'";
-                $result = mysqli_query($conn, $sql);
-                $verificar = mysqli_num_rows($result);
-
-                if($verificar == 0){
-
-                }else{
-                    echo "Ops...Acho que você já possui cadastro :), faça login"
-                }
-            
-            }catch(Except $erro){
-                echo $erro;
-            }
-
-
-        }//Fim function
 
         public function inserirAnuncio(
             Conexao $conexao, 
