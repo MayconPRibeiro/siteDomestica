@@ -38,7 +38,9 @@
         
                         <label for="tDescricao">Descrição:</label>
                         <input type="text" id="tDescricao" name="tDescricao" placeholder="Descreva o serviço que você precisa.">
+                        <br>
                         <p>Informe abaixo o seu endereço:<p>
+                        <br>
                         <label for="tLogradouro">Logradouro:</label>
                         <input type="text" name="tLogradouro" id="tLogradouro">
         
@@ -59,8 +61,9 @@
             
                                             
                         <div class="opcoes">  
-                            <button class="botao"> Criar anúncio </button>
-                            <button class="botao">Voltar</button>
+                            <button type="submit" name="submit" class="botao"> Criar anúncio </button>
+                            <a href="PerfilMadame.html">Voltar<button class="botao"></button></a>
+                                                        
                             </div>
                 <?php
                 if(isset($_POST['submit'])) {

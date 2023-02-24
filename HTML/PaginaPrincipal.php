@@ -28,7 +28,6 @@
                 <br><br><b>Está buscando serviço?</b> <br>Na Faxi Lover temos diversos 
                 anúncios para você. Confira!
             </figcaption>
-            <a href="PaginaCadastrar.php"><button>Comece Aqui</button></a>
         </figure>
         <div id="containerComoFunciona">
             <h2>Como funciona?</h2>
