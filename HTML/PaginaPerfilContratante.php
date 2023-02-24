@@ -75,8 +75,7 @@
                     <input type="text" name="tCidade" id="tCidade" value="<?php $consul->consultarCidade($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
     
                     <br>
-                    <input type="submit" value="Atualizar Informações">
-
+                    <a href="TelaAtualizar.php"><input type="button" value="Atualizar Informações"></a>
 
                 </form>
             </div>

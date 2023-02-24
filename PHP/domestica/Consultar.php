@@ -51,7 +51,7 @@
                     if($dados['cpf'] == $cpf){
 
                         echo $dados['nome'];
-                        
+                                                
 
                     }//Fim if
 
@@ -62,7 +62,7 @@
             }//Fim try catch
 
         }//Fim function 
-
+        
 
 
         public function ConsultarTelefone(Conexao $conexao, string $nomeDaTabela, string $cpf){
