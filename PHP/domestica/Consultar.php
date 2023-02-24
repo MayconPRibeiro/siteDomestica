@@ -78,6 +78,7 @@
                     if($dados['cpf'] == $cpf){
 
                         echo $dados['telefone'];
+                        
 
                     }//Fim if
 

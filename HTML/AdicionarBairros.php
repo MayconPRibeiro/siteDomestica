@@ -32,32 +32,42 @@
         <div id="blocoCadastrar">
             <h3>Selecione as Cidades de interesse</h3>
             <div id="formulario">
+
+                <?php
+                    if(isset($_POST['submit'])){
+                            $conexao = new Conexao();
+                            $cidade  = new Atualizar(); 
+                        }//fim do isset
+                ?>
                 <form>
                     <label for="tCidade1">1° Cidade</label>
-                    <input type="text" name="tCidade1" id="tCidade1">
+                    <input type="text" name="tCidade1" id="tCidade1" value="<?php $cidade->interesse1($conexao, 'domestica', $_COOKIE['tCidade1']); ?>" disabled>
     
                     <label for="tCidade2">2° Cidade</label>
-                    <input type="text" name="tCidade2" id="tCidade2">
+                    <input type="text" name="tCidade2" id="tCidade2" value="<?php $cidade->interesse2($conexao, 'domestica', $_COOKIE['tCidade2']); ?>" disabled>
     
                     <label for="tCidade3">3° Cidade</label>
-                    <input type="text" name="tCidade3" id="tCidade3">
+                    <input type="text" name="tCidade3" id="tCidade3" value="<?php $cidade->interesse3($conexao, 'domestica', $_COOKIE['tCidade3']); ?>" disbaled>
     
                     <label for="tCidade4">4° Cidade</label>
-                    <input type="text" name="tCidade4" id="tCidade4">
+                    <input type="text" name="tCidade4" id="tCidade4" value="<?php $cidade->interesse4($conexao, 'domestica', $_COOKIE['tCidade4']); ?>" disabled>
     
                     <input type="submit" value="Salvar cidades de interesse">
 
                     <?php
                         if(isset($_POST['submit'])){
-                            $conexao = new Conexao();
-                            $cidade  = new Atualizar();
 
-                            echo $cidade-> update($conexao, 
-                            $_POST['tCidade1'],
-                            $_POST['tCidade2'],
-                            $_POST['tCidade3'],
-                            $_POST['tCidade4']); 
-                        }//fim do isset
+
+                        if($_POST['tCpf'] != "" && $_POST['tSenha'] != ""){
+                            $conexao = new Conexao();
+                            $conexao->conectar();
+
+                        if($_POST['tOpcao'] == 'domestica'){
+                            $entrar = new Consultar();
+                            setcookie('user', $_POST['tCpf']);
+                            $entrar->logar($conexao, $_POST['tCpf'], $_POST['tSenha']);
+                        }
+
                     ?>
                 </form>
             </div>
