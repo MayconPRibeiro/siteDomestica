@@ -2,9 +2,9 @@
     namespace siteDomestica\HTML;
 
     require_once('../PHP/domestica/Conexao.php');
-    require_once('../PHP/domestica/Inserir.php');
+    require_once('../PHP/domestica/Atualizar.php');
 
-    use siteDomestica\PHP\domestica\Inserir;
+    use siteDomestica\PHP\domestica\Atualizar;
 ?>
 
 <!DOCTYPE html>
@@ -50,9 +50,9 @@
                     <?php
                         if(isset($_POST['submit'])){
                             $conexao = new Conexao();
-                            $cidade  = new Inserir();
+                            $cidade  = new Atualizar();
 
-                            echo $cidade-> Insert($conexao, 
+                            echo $cidade-> update($conexao, 
                             $_POST['tCidade1'],
                             $_POST['tCidade2'],
                             $_POST['tCidade3'],

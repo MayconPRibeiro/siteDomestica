@@ -45,6 +45,7 @@
                  $conexao = new Conexao();
                  $conexao->conectar();
                  $consul = new Consultar();
+                 setcookie['vaga', $_COOKIE['user']];
                  
 
             ?>

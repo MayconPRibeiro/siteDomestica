@@ -292,7 +292,7 @@
 
             }//Fim try catch
 
-        }//Fim function logar
+        }//Fim function logarCliente
 
 
 

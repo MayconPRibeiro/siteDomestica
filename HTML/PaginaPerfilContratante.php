@@ -45,7 +45,7 @@
                  $conexao = new Conexao();
                  $conexao->conectar();
                  $consul = new Consultar();
-                 
+                                  
 
             ?>
                 

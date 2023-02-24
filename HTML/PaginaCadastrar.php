@@ -96,7 +96,8 @@
                             $_POST['tNumero'], 0 , 
                             $_POST['tSenha'], 
                             $_POST['tEmail'], 
-                            $_POST['tWhats']);
+                            $_POST['tWhats'], 
+                            'Vazio', 'Vazio', 'Vazio', 'Vazio');
 
                         }else{
                             $conexao = new Conexao();
