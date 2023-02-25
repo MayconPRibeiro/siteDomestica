@@ -58,15 +58,19 @@
                         if(isset($_POST['submit'])){
 
 
-                        if($_POST['tCpf'] != "" && $_POST['tSenha'] != ""){
-                            $conexao = new Conexao();
-                            $conexao->conectar();
+                            if($_POST['tCpf'] != "" && $_POST['tSenha'] != ""){
+                                $conexao = new Conexao();
+                                $conexao->conectar();
 
-                        if($_POST['tOpcao'] == 'domestica'){
-                            $entrar = new Consultar();
-                            setcookie('user', $_POST['tCpf']);
-                            $entrar->logar($conexao, $_POST['tCpf'], $_POST['tSenha']);
-                        }
+                            }//Fim if
+
+                            if($_POST['tOpcao'] == 'domestica'){
+                                $entrar = new Consultar();
+                                setcookie('user', $_POST['tCpf']);
+                                $entrar->logar($conexao, $_POST['tCpf'], $_POST['tSenha']);
+                            }//Fim if
+
+                     }//Fim if isset
 
                     ?>
                 </form>
