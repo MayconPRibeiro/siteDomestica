@@ -40,16 +40,7 @@
         </p>
         <div id="formularioPerfil">
             <div id="formularioInterno">
-
-            <?php
-
-                 $conexao = new Conexao();
-                 $conexao->conectar();
-                 $consul = new Consultar();
-                 $atu = new Atualizar();
-                                  
-
-            ?>                
+              
                 <form method='POST'>                    
     
                     <label for="tTelefone">Telefone</label>
@@ -79,25 +70,41 @@
 
                     if(isset($_POST['submitTelefone'])){
 
+                        $conexao = new Conexao();
+                        $conexao->conectar();                        
+                        $atu = new Atualizar();
+
                         $atu->AtualizarTelefone($conexao, 'cliente', $_COOKIE['user'], $_POST['tTelefone']);
                     }//Fim
 
                     if(isset($_POST['submitRua'])){
+                        $conexao = new Conexao();
+                        $conexao->conectar();                        
+                        $atu = new Atualizar();
 
                         $atu->AtualizarRua($conexao, 'cliente', $_COOKIE['user'], $_POST['tRua']);
                     }//Fim
 
                     if(isset($_POST['submitNumero'])){
+                        $conexao = new Conexao();
+                        $conexao->conectar();                        
+                        $atu = new Atualizar();
 
                         $atu->AtualizarNumero($conexao, 'cliente', $_COOKIE['user'], $_POST['tNumero']);
                     }//Fim
 
                     if(isset($_POST['submitBairro'])){
+                        $conexao = new Conexao();
+                        $conexao->conectar();                        
+                        $atu = new Atualizar();
 
                         $atu->AtualizarBairro($conexao, 'cliente', $_COOKIE['user'], $_POST['tBairro']);
                     }//Fim
 
                     if(isset($_POST['submitCidade'])){
+                        $conexao = new Conexao();
+                        $conexao->conectar();                        
+                        $atu = new Atualizar();
 
                         $atu->AtualizarCidade($conexao, 'cliente', $_COOKIE['user'], $_POST['tCidade']);
                     }//Fim
