@@ -33,8 +33,8 @@
 
                 <div id="formulario">
                     <form method="POST">
-                        <label for="tTitulo">Título:</label>
-                        <input type="text" id="tTitulo" name="tTitulo" placeholder="Insira o título do seu anuncio aqui." >
+                        <label for="titulo">Título:</label>
+                        <input type="text" id="titulo" name="titulo" placeholder="Insira o título do seu anuncio aqui." >
         
                         <label for="tDescricao">Descrição:</label>
                         <input type="text" id="tDescricao" name="tDescricao" placeholder="Descreva o serviço que você precisa.">
@@ -62,7 +62,7 @@
                                             
                         <div class="opcoes">  
                             <button type="submit" name="submit" class="botao"> Criar anúncio </button>
-                            <a href="PerfilMadame.html">Voltar<button class="botao"></button></a>
+                            <a href="PaginaPerfilContratante.php"><button type="button" name="submit" class="botao"> Voltar</button></a> 
                                                         
                             </div>
                 <?php
@@ -90,7 +90,7 @@
                     } else {
                         echo "Houve um erro!";
                     }
-                    echo $inser->inserirAnuncio($conexao, '123456789', $_POST['titulo'], $_POST['descricao'], $_POST['logradouro'], $_POST['numero'], $_POST['bairro'], $_POST['cidade'], $_POST['valor'], $caminho);
+                    echo $inser->inserirAnuncio($conexao, '123456789', $_POST['tTitulo'], $_POST['tDescricao'], $_POST['tLogradouro'], $_POST['tNumero'], $_POST['tBairro'], $_POST['tCidade'], $_POST['valor'], $caminho);
                 } 
             ?>
         </form>

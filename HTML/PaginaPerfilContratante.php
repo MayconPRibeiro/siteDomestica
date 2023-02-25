@@ -45,8 +45,7 @@
                  $conexao = new Conexao();
                  $conexao->conectar();
                  $consul = new Consultar();
-                                  
-
+                                
             ?>
                 
                 <form method='POST'> 
@@ -57,7 +56,7 @@
                     <input type="text" id="tData" name="tData" value="<?php $consul->ConsultarNascimento($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
     
                     <label for="tTelefone">Telefone</label>
-                    <input type="text" name="tTelefone" id="tTelefone" value="<?php echo $consul->ConsultarTelefone($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
+                    <input type="text" name="tTelefone" id="tTelefone"  value="<?php echo $consul->ConsultarTelefone($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
     
                     <label for="tCPF">CPF</label>
                     <input type="text" name="tCPF" id="tCPF" value="<?php $consul->consultarCpf($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
@@ -75,17 +74,15 @@
                     <input type="text" name="tCidade" id="tCidade" value="<?php $consul->consultarCidade($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
     
                     <br>
-                    <a href="TelaAtualizar.php"><input type="button" value="Atualizar Informações"></a>
+                    <input type="submit" value="Atualizar Informações">
+
 
                 </form>
             </div>
             <div id="opcoesBotoes">   
-               <a href="AdicionarBairros.php"><button class="botao">Adicionar Bairros de Interesse</button></a>
-               <a href="TelaVagas.php"><button class="botao">Procurar Vagas</button></a>
+               <a href="TelaCriarAnuncio.php"><button class="botao">Crie um anúncio</button></a>
+               <a href="verAnuncios.php"><button class="botao">Ver anúncios criados</button></a>
             </div>
-
-
-
         </div>
     </body>
 </html>
