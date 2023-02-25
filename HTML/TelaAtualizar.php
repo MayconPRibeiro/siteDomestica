@@ -38,6 +38,9 @@
         <p>
             Aqui você poderá editar alguns campos.
         </p>
+
+        
+
         <div id="formularioPerfil">
             <div id="formularioInterno">
               
@@ -45,68 +48,174 @@
     
                     <label for="tTelefone">Telefone</label>
                     <input type="text" name="tTelefone" id="tTelefone"  >
-                    <input type="submit" name="submitTelefone" value="Atualizar Telefone">  
+                    <input type="submit" name="submit" value="Atualizar Telefone">  
     
-                    <label for="tRua">Rua</label>
-                    <input type="text" name="tRua" id="tRua" >
-                    <input type="submit" name="submitRua" value="Atualizar Rua">  
-    
-                    <label for="tNumero">Numero</label>
-                    <input type="text" name="tNumero" id="tNumero"  >
-                    <input type="submit" name="submitNumero" value="Atualizar Número">  
-    
-                    <label for="tBairro">Bairro</label>
-                    <input type="text" name="tBairro" id="tBairro"  >
-                    <input type="submit" name="submitBairro" value="Atualizar Bairro">  
-
-                    <label for="tCidade">Cidade</label>
-                    <input type="text" name="tCidade" id="tCidade" >
-                    <input type="submit" name="submitCidade" value="Atualizar Cidade">  
     
                     <br>
                     
 
                     <?php
 
-                    if(isset($_POST['submitTelefone'])){
+                    if(isset($_POST['submit'])){
 
                         $conexao = new Conexao();
                         $conexao->conectar();                        
                         $atu = new Atualizar();
 
-                        $atu->AtualizarTelefone($conexao, 'cliente', $_COOKIE['user'], $_POST['tTelefone']);
+                        $atu->AtualizarTelefone($conexao, 'domestica', $_COOKIE['user'], $_POST['tTelefone']);
                     }//Fim
 
-                    if(isset($_POST['submitRua'])){
+                   
+
+                    ?>
+
+                </form>     
+
+                
+            </div>
+
+        </div>
+
+
+
+        <div id="formularioPerfil">
+            <div id="formularioInterno">
+              
+                <form method='POST'>                    
+    
+ 
+    
+                    <label for="tRua">Rua</label>
+                    <input type="text" name="tRua" id="tRua" >
+                    <input type="submit" name="submit" value="Atualizar Rua">  
+    
+    
+                    <br>
+                    
+
+                    <?php
+
+
+                    if(isset($_POST['submit'])){
                         $conexao = new Conexao();
                         $conexao->conectar();                        
                         $atu = new Atualizar();
 
-                        $atu->AtualizarRua($conexao, 'cliente', $_COOKIE['user'], $_POST['tRua']);
+                        $atu->AtualizarRua($conexao, 'domestica', $_COOKIE['user'], $_POST['tRua']);
                     }//Fim
+                    
 
-                    if(isset($_POST['submitNumero'])){
+                    ?>
+
+                </form>     
+
+                
+            </div>
+
+        </div>
+
+
+
+        <div id="formularioPerfil">
+            <div id="formularioInterno">
+              
+                <form method='POST'>                    
+    
+
+                    <label for="tNumero">Numero</label>
+                    <input type="text" name="tNumero" id="tNumero"  >
+                    <input type="submit" name="submit" value="Atualizar Número">  
+    
+ 
+    
+                    <br>
+                    
+
+                    <?php
+
+ 
+
+                    if(isset($_POST['submit'])){
                         $conexao = new Conexao();
                         $conexao->conectar();                        
                         $atu = new Atualizar();
 
-                        $atu->AtualizarNumero($conexao, 'cliente', $_COOKIE['user'], $_POST['tNumero']);
+                        $atu->AtualizarNumero($conexao, 'domestica', $_COOKIE['user'], $_POST['tNumero']);
                     }//Fim
+                    
 
-                    if(isset($_POST['submitBairro'])){
+                    ?>
+
+                </form>     
+
+                
+            </div>
+
+        </div>
+
+
+
+
+        <div id="formularioPerfil">
+            <div id="formularioInterno">
+              
+                <form method='POST'>                    
+    
+   
+                    <label for="tBairro">Bairro</label>
+                    <input type="text" name="tBairro" id="tBairro"  >
+                    <input type="submit" name="submit" value="Atualizar Bairro">  
+ 
+    
+                    <br>
+                    
+
+                    <?php
+
+   
+
+                    if(isset($_POST['submit'])){
                         $conexao = new Conexao();
                         $conexao->conectar();                        
                         $atu = new Atualizar();
 
-                        $atu->AtualizarBairro($conexao, 'cliente', $_COOKIE['user'], $_POST['tBairro']);
+                        $atu->AtualizarBairro($conexao, 'domestica', $_COOKIE['user'], $_POST['tBairro']);
                     }//Fim
+                    
 
-                    if(isset($_POST['submitCidade'])){
+                    ?>
+
+                </form>     
+
+                
+            </div>
+
+        </div>
+
+
+
+
+        <div id="formularioPerfil">
+            <div id="formularioInterno">
+              
+                <form method='POST'>                    
+    
+                    <label for="tCidade">Cidade</label>
+                    <input type="text" name="tCidade" id="tCidade" >
+                    <input type="submit" name="submit" value="Atualizar Cidade">  
+    
+                    <br>
+                    
+
+                    <?php
+
+  
+                    if(isset($_POST['submit'])){
                         $conexao = new Conexao();
                         $conexao->conectar();                        
                         $atu = new Atualizar();
 
-                        $atu->AtualizarCidade($conexao, 'cliente', $_COOKIE['user'], $_POST['tCidade']);
+                        $atu->AtualizarCidade($conexao, 'domestica', $_COOKIE['user'], $_POST['tCidade']);
                     }//Fim
 
                     
@@ -114,6 +223,8 @@
                     ?>
 
                 </form>     
+
+                
             </div>
 
         </div>
