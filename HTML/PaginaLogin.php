@@ -78,11 +78,13 @@
                         if($_POST['tOpcao'] == 'domestica'){
                             $entrar = new Consultar();
                             setcookie('user', $_POST['tCpf']);
+                            setcookie('tipo', $_POST['tOpcao']);
                             $entrar->logar($conexao, $_POST['tCpf'], $_POST['tSenha']);
                         }else{
 
                             $entrar = new Consultar();
                             setcookie('user', $_POST['tCpf']);
+                            setcookie('tipo', $_POST['tOpcao']);
                             $entrar->logarCliente($conexao, $_POST['tCpf'], $_POST['tSenha']);
 
                         }//Fim if else
