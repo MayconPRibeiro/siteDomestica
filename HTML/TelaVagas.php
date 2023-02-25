@@ -66,10 +66,10 @@
                     <div id="infoEnd">
                         <h4>Endereço</h4>
                         <div id="infoEndereco">
-                            <p class="logradouro"><?php echo $dados["rua"]." N° "; ?></p>
-                            <p class="numero"><?php echo $dados["numero"]." - "; ?></p>
-                            <p class="bairro"><?php echo $dados["bairro"]." - "; ?></p>
-                            <p class="cidade"><?php echo $dados["cidade"]." - "; ?></p>
+                            <p class="logradouro"><?php echo "LOGRADOURO: ".$dados["rua"]." - N° "; ?></p>
+                            <p class="numero"><?php echo $dados["numero"]." - BAIRRO: "; ?></p>
+                            <p class="bairro"><?php echo $dados["bairro"]." - CIDADE: "; ?></p>
+                            <p class="cidade"><?php echo $dados["cidade"].""; ?></p>
                         </div>
                     </div>
                     <div id="infoVal">

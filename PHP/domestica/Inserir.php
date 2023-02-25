@@ -55,7 +55,7 @@
 
         public function inserirAnuncio(
             Conexao $conexao, 
-            float $cpf,
+            string $cpf,
             string $titulo, 
             string $descricao,
             string $logradouro,
@@ -71,12 +71,15 @@
                 values ('', '$cpf', '$titulo', '$descricao', '$logradouro', '$numero', '$bairro', '$cidade', '$valor', '$caminho')";
                 $result = mysqli_query($conn,$sql);//Executa a ação do script no banco
 
-                mysqli_close($conn);//fechando a conexão com sucesso!
+                
                 
                 if($result){
-                    return "<br><br>Inserido com sucesso!";
+                    echo "<br><br>Inserido com sucesso!";
+                    return;
+                }else{
+                    return "<br><br>Não Inserido!";
                 }
-                return "<br><br>Não Inserido!";
+                mysqli_close($conn);//fechando a conexão com sucesso!
             }catch(Except $erro){
                 echo $erro;
             }

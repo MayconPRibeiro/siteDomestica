@@ -49,24 +49,19 @@
                     <label for="tBairro">Bairro</label>
                     <input type="text" name="tBairro" id="tBairro"  >
                     <input type="submit" name="submit" value="Atualizar Bairro">  
- 
     
-                    <br>
+                    <br>                    
+
+                    <?php   
+
+                        if(isset($_POST['submit'])){
+                            $conexao = new Conexao();
+                            $conexao->conectar();                        
+                            $atu = new Atualizar();
+
+                            $atu->AtualizarBairro($conexao, $_COOKIE['tipo'], $_COOKIE['user'], $_POST['tBairro']);
+                        }//Fim
                     
-
-                    <?php
-
-   
-
-                    if(isset($_POST['submit'])){
-                        $conexao = new Conexao();
-                        $conexao->conectar();                        
-                        $atu = new Atualizar();
-
-                        $atu->AtualizarBairro($conexao, $_COOKIE['tipo'], $_COOKIE['user'], $_POST['tBairro']);
-                    }//Fim
-                    
-
                     ?>
 
                 </form>     

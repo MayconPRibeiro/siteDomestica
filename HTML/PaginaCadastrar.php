@@ -40,7 +40,7 @@
                     <input type="text" id="tNome" name="tNome"><br>
     
                     <label for="tCPF">CPF: </label>
-                    <input type="text" id="tCPF" name="tCPF"><br>
+                    <input type="number" id="tCPF" name="tCPF"><br>
     
                     <label for="tDataNascimento">Data de Nascimento: </label>
                     <input type="date" id="tDataNascimento" name="tDataNascimento"><br>

@@ -22,8 +22,8 @@
                 <img id="logo" src="../imagens/iconeSite.png" alt="Icone do Site"> 
                 <nav>
                     <ul class="navLink">
-                        <li><a href="PaginaCadastrar.html"><b>Cadastre-se</b></a></li>
-                        <li><a href="PaginaLogin.html"><b>Login</b></a></li>
+                        <li><a href="PaginaCadastrar.php"><b>Cadastre-se</b></a></li>
+                        <li><a href="PaginaLogin.php"><b>Login</b></a></li>
                     </ul>
                 </nav>
             </header>        
@@ -33,8 +33,8 @@
 
                 <div id="formulario">
                     <form method="POST">
-                        <label for="titulo">Título:</label>
-                        <input type="text" id="titulo" name="titulo" placeholder="Insira o título do seu anuncio aqui." >
+                        <label for="tTitulo">Título:</label>
+                        <input type="text" id="tTitulo" name="tTitulo" placeholder="Insira o título do seu anuncio aqui." >
         
                         <label for="tDescricao">Descrição:</label>
                         <input type="text" id="tDescricao" name="tDescricao" placeholder="Descreva o serviço que você precisa.">
@@ -48,7 +48,7 @@
                         <input type="text" name="tNumero" id="tNumero">
         
                         <label for="tBairro">Bairro:</label>
-                        <input type="text" name="tBairro " id="tBairro">
+                        <input type="text" name="tBairro" id="tBairro">
         
                         <label for="tCidade">Cidade</label>
                         <input type="text" name="tCidade" id="tCidade"> 
@@ -62,13 +62,14 @@
                                             
                         <div class="opcoes">  
                             <button type="submit" name="submit" class="botao"> Criar anúncio </button>
-                            <a href="PaginaPerfilContratante.php"><button type="button" name="submit" class="botao"> Voltar</button></a> 
+                            <a href="PaginaPerfilContratante.php"><button type="button" name="PerfilContratante" class="botao"> Voltar</button></a> 
                                                         
                             </div>
                 <?php
                 if(isset($_POST['submit'])) {
                     $caminho = "";
                     $conexao = new Conexao();
+                    $conexao->conectar();
                     $inser  = new Inserir();
 
                     $nome       = $_FILES['image']['name'];
@@ -84,13 +85,17 @@
                             $novoNome = uniqid('', true).".".$imagemTipoNew;
                             $caminho = 'uploads/'.$novoNome;
                             move_uploaded_file($tmp, $caminho);
+
                         } else {
                             echo "Imagem grande demais!";
                         }
                     } else {
                         echo "Houve um erro!";
+                        
                     }
-                    echo $inser->inserirAnuncio($conexao, '123456789', $_POST['tTitulo'], $_POST['tDescricao'], $_POST['tLogradouro'], $_POST['tNumero'], $_POST['tBairro'], $_POST['tCidade'], $_POST['valor'], $caminho);
+
+                    $inser->inserirAnuncio($conexao, $_COOKIE['user'], $_POST['tTitulo'], $_POST['tDescricao'], $_POST['tLogradouro'], $_POST['tNumero'], $_POST['tBairro'], $_POST['tCidade'], $_POST['valor'], $caminho);
+                    
                 } 
             ?>
         </form>
