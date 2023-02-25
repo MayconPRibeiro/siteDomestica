@@ -60,7 +60,7 @@
                         $conexao->conectar();                        
                         $atu = new Atualizar();
 
-                        $atu->AtualizarCidade($conexao, 'domestica', $_COOKIE['user'], $_POST['tCidade']);
+                        $atu->AtualizarCidade($conexao, $_COOKIE['tipo'], $_COOKIE['user'], $_POST['tCidade']);
                     }//Fim
 
                     

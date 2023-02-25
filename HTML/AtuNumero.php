@@ -64,7 +64,7 @@
                         $conexao->conectar();                        
                         $atu = new Atualizar();
 
-                        $atu->AtualizarNumero($conexao, 'domestica', $_COOKIE['user'], $_POST['tNumero']);
+                        $atu->AtualizarNumero($conexao, $_COOKIE['tipo'], $_COOKIE['user'], $_POST['tNumero']);
                     }//Fim
                     
 

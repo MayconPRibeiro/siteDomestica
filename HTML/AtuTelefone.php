@@ -62,7 +62,7 @@
                         $conexao->conectar();                        
                         $atu = new Atualizar();
 
-                        $atu->AtualizarTelefone($conexao, 'domestica', $_COOKIE['user'], $_POST['tTelefone']);
+                        $atu->AtualizarTelefone($conexao, $_COOKIE['tipo'], $_COOKIE['user'], $_POST['tTelefone']);
                     }//Fim
 
                    

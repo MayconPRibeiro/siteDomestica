@@ -72,9 +72,11 @@
     
                     <label for="tCidade">Cidade</label>
                     <input type="text" name="tCidade" id="tCidade" value="<?php $consul->consultarCidade($conexao, 'cliente', $_COOKIE['user']); ?>" disabled>
+
     
                     <br>
-                    <input type="submit" value="Atualizar Informações">
+                    
+                    <a href="AtuTelefone.php"><button type="button" name="submit" > Atualizar Telefone</button></a>      <a href="AtuRua.php"><button type="button" name="submit" > Atualizar Rua</button></a>                <a href="AtuNumero.php"><button type="button" name="submit" > Atualizar Numero</button></a>          <a href="AtuBairro.php"><button type="button" name="submit" > Atualizar Bairro</button></a>          <a href="AtuCidade.php"><button type="button" name="submit" > Atualizar Cidade</button></a> 
 
 
                 </form>

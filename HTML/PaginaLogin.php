@@ -57,7 +57,8 @@
                  <br><br>
                  <div class="btnRadio">
                     <input type="radio" checked name="tOpcao" id="tOpcao1" value="domestica">
-                    <label for="tOpcao">Sou prestador de Serviço</label><br>
+                    <label for="tOpcao">Sou prestador de Serviço</label>
+                    <br>
                     <input type="radio" name="tOpcao" id="tOpcao2" value="cliente">
                     <label for="tOpcao">Sou contratante</label><br>
                  </div> 

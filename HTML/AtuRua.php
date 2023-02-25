@@ -63,7 +63,7 @@
                         $conexao->conectar();                        
                         $atu = new Atualizar();
 
-                        $atu->AtualizarRua($conexao, 'domestica', $_COOKIE['user'], $_POST['tRua']);
+                        $atu->AtualizarRua($conexao, $_COOKIE['tipo'], $_COOKIE['user'], $_POST['tRua']);
                     }//Fim
                     
 

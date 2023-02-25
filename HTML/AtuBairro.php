@@ -63,7 +63,7 @@
                         $conexao->conectar();                        
                         $atu = new Atualizar();
 
-                        $atu->AtualizarBairro($conexao, 'domestica', $_COOKIE['user'], $_POST['tBairro']);
+                        $atu->AtualizarBairro($conexao, $_COOKIE['tipo'], $_COOKIE['user'], $_POST['tBairro']);
                     }//Fim
                     
 
