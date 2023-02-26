@@ -21,17 +21,13 @@
             int $avaliacao,
             string $senha,
             string $email,
-            string $telefone,
-            string $interesse1,
-            string $interesse2,
-            string $interesse3,
-            string $interesse4){
+            string $telefone){
 
                 try{
                     
 
                     $conn = $conexao->conectar();
-                    $sql = "insert into domestica (cpf, nome, dataDeNascimento, rua, cidade, bairro , numero, avaliacao, senha, email, telefone, interesse1, interesse2, interesse3, interesse4) values ('$cpf','$nome','$Nascimento','$rua','$cidade','$bairro','$numero','$avaliacao','$senha','$email','$telefone','$interesse1','$interesse2','$interesse3','$interesse4')";
+                    $sql = "insert into domestica (cpf, nome, dataDeNascimento, rua, cidade, bairro , numero, avaliacao, senha, email, telefone, interesse1, interesse2, interesse3, interesse4) values ('$cpf','$nome','$Nascimento','$rua','$cidade','$bairro','$numero','$avaliacao','$senha','$email','$telefone')";
                     $result = mysqli_query($conn,$sql);
 
                     if($result){

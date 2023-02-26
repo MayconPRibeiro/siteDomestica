@@ -13,11 +13,7 @@ create table domestica(
     avaliacao int(1) not null,
     senha varchar (100) not null,
     email varchar(100) not null,
-    telefone varchar(13) not null,
-    interesse1 varchar(50) not null,
-    interesse2 varchar(50) not null,
-    interesse3 varchar(50) not null,
-    interesse4 varchar(50) not null
+    telefone varchar(13) not null
 )Engine = InnoDB;
 
 create table cliente(
@@ -53,3 +49,7 @@ create table candidatura(
     nome varchar(100) not null,
     telefone varchar(11) not null
 ) Engine = InnoDB;
+
+select * from anuncio;
+
+insert into anuncio (cod, cpf, titulo, descricao, rua, numero, bairro, cidade, valor, imagem) values ('', '$cpf', '$titulo', '$descricao', '$logradouro', '15', '$bairro', '$cidade', '100', '$caminho');
