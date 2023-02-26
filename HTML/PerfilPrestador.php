@@ -81,8 +81,8 @@
                 
             </div>
              
-            <div id="opcoesBotoes">   
-               <a href="AdicionarBairros.php"><button class="botao">Adicionar Bairros de Interesse</button></a>
+            <div id="opcoesBotoes"> 
+               
                <a href="TelaVagas.php"><button class="botao">Procurar Vagas</button></a>
             </div>
         </div>
