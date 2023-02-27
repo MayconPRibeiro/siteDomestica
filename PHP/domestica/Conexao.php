@@ -6,7 +6,7 @@ class Conexao{
     
     public function conectar(){
         try{
-            $conn = mysqli_connect('localhost', 'root' , '' ,'site');
+            $conn = mysqli_connect('faxilover-server.mysql.database.azure.com', 'ipbeeawqyt' , '6BM448405VYANA6A$' ,'site');
             if($conn){
                 
                 return $conn;
