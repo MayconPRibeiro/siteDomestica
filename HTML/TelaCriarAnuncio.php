@@ -56,8 +56,7 @@
                         <label for="valor">Valor</label>
                         <input type="number" name="valor" id="valor" placeholder="100.00" required>
             
-                        <label for="image">Selecione uma imagem</label>
-                        <input type="file" name="image"  accept=".png, .jpg" required>
+                       
             
                                             
                         <div class="opcoes">  
@@ -67,32 +66,13 @@
                             </div>
                 <?php
                 if(isset($_POST['submit'])) {
+                    
+                    
                     $caminho = "";
                     $conexao = new Conexao();
                     $conexao->conectar();
                     $inser  = new Inserir();
 
-                    $nome       = $_FILES['image']['name'];
-                    $tmp        = $_FILES['image']['tmp_name'];
-                    $tamanho    = $_FILES['image']['size'];
-                    $errors     = $_FILES['image']['error'];
-
-                    $imagemTipo = explode('.', $nome);
-                    $imagemTipoNew = strtolower(end($imagemTipo));
-
-                    if($errors === 0) {
-                        if($tamanho < 4000000) {
-                            $novoNome = uniqid('', true).".".$imagemTipoNew;
-                            $caminho = 'uploads/'.$novoNome;
-                            move_uploaded_file($tmp, $caminho);
-
-                        } else {
-                            echo "Imagem grande demais!";
-                        }
-                    } else {
-                        echo "Houve um erro!";
-                        
-                    }
 
                     $inser->inserirAnuncio($conexao, $_COOKIE['user'], $_POST['tTitulo'], $_POST['tDescricao'], $_POST['tLogradouro'], $_POST['tNumero'], $_POST['tBairro'], $_POST['tCidade'], $_POST['valor'], $caminho);
                     
